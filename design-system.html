@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Design System</title>
+
+        <!-- Подключаем Nunito -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Nunito', 'ui-sans-serif', 'system-ui'],
+                        },
+                        fontSize: {
+                            h1: [
+                                '36px',
+                                { lineHeight: '44px', fontWeight: '600' },
+                            ],
+                            h2: [
+                                '28px',
+                                { lineHeight: '36px', fontWeight: '600' },
+                            ],
+                            h3: [
+                                '22px',
+                                { lineHeight: '30px', fontWeight: '500' },
+                            ],
+                            body: [
+                                '16px',
+                                { lineHeight: '24px', fontWeight: '400' },
+                            ],
+                            small: [
+                                '14px',
+                                { lineHeight: '20px', fontWeight: '400' },
+                            ],
+                        },
+                        colors: {
+                            base: '#FFFFFF', // фон сайта
+                            active: '#D9EBD5', // фон активных элементов
+                            card1: '#F1E6BA', // фон карточек 2
+                            button: '#EEEEEE', // фон кнопок
+                            card2: '#F6F6F6', // фон карточек заведений и специалистов
+                            navactive: '#232323', // фон активной кнопки в моб. навбаре
+                        },
+                        borderRadius: {
+                            soft: '25px', // общее скругление
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+
+    <body class="bg-base text-gray-800 font-sans">
+        <div class="max-w-4xl mx-auto p-8 space-y-8">
+            <!-- Заголовки -->
+            <section>
+                <h1 class="text-h1">Найди идеальное место для праздника</h1>
+                <h2 class="text-h2 mt-4">Собери команду профессионалов</h2>
+                <h3 class="text-h3 mt-2">
+                    Ведущие, фотографы, флористы и другие
+                </h3>
+            </section>
+
+            <!-- Описание -->
+            <section>
+                <p class="text-body">
+                    Наша платформа поможет тебе легко и удобно выбрать
+                    заведение, забронировать дату, оставить отзыв и собрать
+                    команду специалистов для незабываемого события — от свадьбы
+                    до корпоратива.
+                </p>
+                <p class="text-small mt-2 text-gray-600">
+                    Всё в одном месте, чтобы твой праздник был идеальным.
+                </p>
+            </section>
+
+            <!-- Примеры карточек -->
+            <section class="grid grid-cols-2 gap-6">
+                <div class="bg-active p-6 rounded-soft text-body">
+                    Активная карточка
+                </div>
+                <div class="bg-card1 p-6 rounded-soft text-body">
+                    Карточка 2
+                </div>
+                <div class="bg-card2 p-6 rounded-soft text-body">
+                    Карточка заведения
+                </div>
+            </section>
+
+            <!-- Примеры кнопок -->
+            <section class="flex gap-4">
+                <button class="bg-button px-6 py-3 rounded-soft text-body">
+                    Кнопка
+                </button>
+                <button class="bg-active px-6 py-3 rounded-soft text-body">
+                    Активная кнопка
+                </button>
+                <button class="bg-navactive px-6 py-3 rounded-soft text-white">
+                    Навбар (актив)
+                </button>
+            </section>
+        </div>
+    </body>
+</html>

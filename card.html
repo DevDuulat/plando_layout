@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="flex items-center justify-center min-h-screen">
+        <div
+            class="w-[210px] bg-[#F6F6F6] rounded-[16px] overflow-hidden p-[10px]"
+        >
+            <div class="relative">
+                <img
+                    src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1198&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Card Image"
+                    class="w-full h-36 object-cover rounded-[16px]"
+                />
+
+                <div
+                    class="absolute bottom-0 left-0 m-1 px-3 py-1 bg-white/70 backdrop-blur-md text-black rounded-[16px] font-semibold"
+                >
+                    Заголовок
+                </div>
+            </div>
+
+            <div class="relative p-[5px] bg-[#F2E7BB] rounded-[16px] mt-2">
+                <!-- Сердечко справа сверху -->
+                <div
+                    class="absolute top-[4px] right-[4px] w-10 h-10 bg-[#BFB79F] rounded-full flex items-center justify-center"
+                >
+                    <!-- Сюда вставьте SVG сердечка -->
+                    <svg
+                        width="20px"
+                        height="20px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                            fill="white"
+                        />
+                    </svg>
+                </div>
+
+                <div
+                    class="flex flex-col p-[5px] text-sm font-normal space-y-1"
+                >
+                    <div class="flex items-center space-x-2">
+                        <svg
+                            width="22px"
+                            height="22px"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M6 10H10"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                            <path
+                                d="M21.9977 12.5C21.9977 12.4226 22 11.9673 21.9977 11.9346C21.9623 11.4338 21.5328 11.035 20.9935 11.0021C20.9583 11 20.9167 11 20.8333 11H18.2308C16.4465 11 15 12.3431 15 14C15 15.6569 16.4465 17 18.2308 17H20.8333C20.9167 17 20.9583 17 20.9935 16.9979C21.5328 16.965 21.9623 16.5662 21.9977 16.0654C22 16.0327 22 15.5774 22 15.5"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <circle
+                                cx="18"
+                                cy="14"
+                                r="1"
+                                fill="#6b7280"
+                            ></circle>
+                            <path
+                                d="M10 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.6366 20.0203 20.8873 18.8723 20.965 17M20.965 11C20.8873 9.1277 20.6366 7.97975 19.8284 7.17157C18.6569 6 16.7712 6 13 6H10C6.22876 6 4.34315 6 3.17157 7.17157C2 8.34315 2 10.2288 2 14C2 17.7712 2 19.6569 3.17157 20.8284C3.82475 21.4816 4.69989 21.7706 6 21.8985"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <path
+                                d="M6 6L9.73549 3.52313C10.7874 2.82562 12.2126 2.82562 13.2645 3.52313L17 6"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                        </svg>
+                        <span class="text-gray-500">$$$</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg
+                            width="22px"
+                            height="22px"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <circle
+                                cx="12"
+                                cy="6"
+                                r="4"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                            ></circle>
+                            <path
+                                d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <path
+                                d="M6 9C4.34315 9 3 7.88071 3 6.5C3 5.11929 4.34315 4 6 4"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <path
+                                d="M17.1973 15C17.7078 15.5883 18 16.2714 18 17C18 19.2091 15.3137 21 12 21C8.68629 21 6 19.2091 6 17C6 14.7909 8.68629 13 12 13C12.3407 13 12.6748 13.0189 13 13.0553"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <path
+                                d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                            <path
+                                d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14"
+                                stroke="#6b7280"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                            ></path>
+                        </svg>
+                        <span class="text-gray-500">10 гостей</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
