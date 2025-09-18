@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ресторан "Созвездие вкусов"</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Nunito', 'ui-sans-serif', 'system-ui'],
+                        },
+                        fontSize: {
+                            h1: [
+                                '36px',
+                                { lineHeight: '44px', fontWeight: '600' },
+                            ],
+                            h2: [
+                                '28px',
+                                { lineHeight: '36px', fontWeight: '600' },
+                            ],
+                            h3: [
+                                '22px',
+                                { lineHeight: '30px', fontWeight: '500' },
+                            ],
+                            body: [
+                                '16px',
+                                { lineHeight: '24px', fontWeight: '400' },
+                            ],
+                            small: [
+                                '14px',
+                                { lineHeight: '20px', fontWeight: '400' },
+                            ],
+                        },
+                        colors: {
+                            base: '#FFFFFF', // фон сайта
+                            active: '#D9EBD5', // фон активных элементов
+                            card1: '#F1E6BA', // фон карточек 2
+                            button: '#EEEEEE', // фон кнопок
+                            card2: '#F6F6F6', // фон карточек заведений и специалистов
+                            navactive: '#232323', // фон активной кнопки в моб. навбаре
+                        },
+                        borderRadius: {
+                            soft: '25px', // общее скругление
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="bg-base text-gray-800 font-sans">
+        <div class="px-4 pb-20 lg:px-12">
+            <nav class="py-4">
+                <ol class="flex items-center space-x-2 text-small">
+                    <li><a href="#" class="text-gray-500">Главная</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li><a href="#" class="text-gray-500">Заведения</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-navactive font-medium">Созвездие вкусов</li>
+                </ol>
+            </nav>
+
+            <div class="lg:hidden">
+                <div class="relative rounded-soft overflow-hidden h-64 mb-4">
+                    <img
+                        src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1198&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Баннер ресторана"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+                <h1 class="text-h1 mb-2">Созвездие вкусов</h1>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="flex items-center text-card1 text-xl">
+                        <span class="text-[#facc15]">&#9733;</span>
+                        <span class="text-[#facc15]">&#9733;</span>
+                        <span class="text-[#facc15]">&#9733;</span>
+                        <span class="text-[#facc15]">&#9733;</span>
+                        <span class="text-gray-300">&#9733;</span>
+                    </div>
+                    <span class="text-body font-semibold">4.5</span>
+                    <span class="text-small text-gray-500">(124 отзыва)</span>
+                </div>
+                <div class="flex gap-2">
+                    <button
+                        class="bg-button px-4 py-2 rounded-soft flex-1 text-small"
+                    >
+                        <div class="flex items-center justify-center gap-2">
+                            <svg
+                                width="20px"
+                                height="20px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M14 8C14 9.10457 13.1046 10 12 10C10.8954 10 10 9.10457 10 8C10 6.89543 10.8954 6 12 6C13.1046 6 14 6.89543 14 8Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M12 15C12 16.1046 10.1046 17 9 17C7.89543 17 7 16.1046 7 15C7 13.8954 7.89543 13 9 13C10.1046 13 12 13.8954 12 15Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M12 15C12 16.1046 13.8954 17 15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 12 13.8954 12 15Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M15 8C15 9.10457 15.8954 10 17 10C18.1046 10 19 9.10457 19 8C19 6.89543 18.1046 6 17 6C15.8954 6 15 6.89543 15 8Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M7 8C7 9.10457 7.89543 10 9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                    stroke="#4B5563"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            Поделиться
+                        </div>
+                    </button>
+                    <button
+                        class="bg-active px-4 py-2 rounded-soft flex-1 text-small"
+                    >
+                        <div class="flex items-center justify-center gap-2">
+                            <svg
+                                width="20px"
+                                height="20px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                    fill="#4B5563"
+                                />
+                            </svg>
+                            В мой праздник
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden lg:grid grid-cols-12 gap-8">
+                <div class="col-span-8 space-y-8">
+                    <div class="relative rounded-soft overflow-hidden h-96">
+                        <img
+                            src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Баннер ресторана"
+                            class="w-full h-full object-cover"
+                        />
+                        <div class="absolute bottom-4 left-4 flex gap-2">
+                            <button
+                                class="bg-button px-4 py-2 rounded-full text-small font-medium"
+                            >
+                                10 Фото
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-full text-small font-medium"
+                            >
+                                <svg
+                                    width="20px"
+                                    height="20px"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M14 8C14 9.10457 13.1046 10 12 10C10.8954 10 10 9.10457 10 8C10 6.89543 10.8954 6 12 6C13.1046 6 14 6.89543 14 8Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M12 15C12 16.1046 10.1046 17 9 17C7.89543 17 7 16.1046 7 15C7 13.8954 7.89543 13 9 13C10.1046 13 12 13.8954 12 15Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M12 15C12 16.1046 13.8954 17 15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 12 13.8954 12 15Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M15 8C15 9.10457 15.8954 10 17 10C18.1046 10 19 9.10457 19 8C19 6.89543 18.1046 6 17 6C15.8954 6 15 6.89543 15 8Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M7 8C7 9.10457 7.89543 10 9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="#4B5563"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                                Поделиться
+                            </button>
+                            <button
+                                class="bg-active px-4 py-2 rounded-full text-small font-medium"
+                            >
+                                <svg
+                                    width="20px"
+                                    height="20px"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                        fill="#4B5563"
+                                    />
+                                </svg>
+                                В мой праздник
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <h1 class="text-h1">Созвездие вкусов</h1>
+                        <div class="flex items-center gap-2">
+                            <div class="flex items-center text-card1 text-xl">
+                                <span class="text-[#facc15]">&#9733;</span>
+                                <span class="text-[#facc15]">&#9733;</span>
+                                <span class="text-[#facc15]">&#9733;</span>
+                                <span class="text-[#facc15]">&#9733;</span>
+                                <span class="text-gray-300">&#9733;</span>
+                            </div>
+                            <span class="text-body font-semibold">4.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-4">
+                    <div
+                        class="p-6 bg-card2 rounded-soft sticky top-4 space-y-6"
+                    >
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-h3">Часы работы</h3>
+                            <span class="text-body font-semibold text-green-600"
+                                >Открыто</span
+                            >
+                        </div>
+                        <div class="space-y-2 text-body">
+                            <p class="flex justify-between">
+                                <span class="text-gray-600">Пн-Пт</span>
+                                <span>10:00 - 22:00</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="text-gray-600">Сб-Вс</span>
+                                <span>11:00 - 23:00</span>
+                            </p>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Что включено</h3>
+                            <div class="flex flex-wrap gap-2 text-small">
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Wi-Fi</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Парковка</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Детская комната</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Кальян</span
+                                >
+                            </div>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Тип кухни</h3>
+                            <p class="text-body text-gray-600">
+                                Европейская, Азиатская, Авторская
+                            </p>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Меню</h3>
+                            <a
+                                href="#"
+                                class="bg-button py-3 rounded-soft text-body block text-center"
+                            >
+                                Скачать меню
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:grid grid-cols-12 gap-8 lg:mt-8">
+                <div class="lg:col-span-8">
+                    <div class="lg:hidden mt-8">
+                        <h2 class="text-h2 mb-4">Фотографии</h2>
+                        <div
+                            class="flex gap-2 overflow-x-auto snap-x snap-mandatory"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Фото ресторана"
+                                class="w-64 h-48 object-cover rounded-soft flex-shrink-0 snap-center"
+                            />
+                            <img
+                                src="https://plus.unsplash.com/premium_photo-1673569490592-fdbffc9b8f67?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Фото ресторана"
+                                class="w-64 h-48 object-cover rounded-soft flex-shrink-0 snap-center"
+                            />
+                            <img
+                                src="https://images.unsplash.com/photo-1480455454781-1af590be2a58?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Фото ресторана"
+                                class="w-64 h-48 object-cover rounded-soft flex-shrink-0 snap-center"
+                            />
+                            <img
+                                src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1198&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="Фото ресторана"
+                                class="w-64 h-48 object-cover rounded-soft flex-shrink-0 snap-center"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h2 class="text-h2 mb-4">Описание</h2>
+                        <p class="text-body text-gray-600">
+                            "Созвездие вкусов" — это не просто ресторан, это
+                            место, где каждый вечер превращается в праздник.
+                            Наше заведение идеально подходит для проведения
+                            банкетов, корпоративов и семейных торжеств. Мы
+                            предлагаем изысканные блюда европейской и азиатской
+                            кухни, приготовленные из свежайших продуктов.
+                        </p>
+                    </div>
+
+                    <div class="lg:hidden mt-8 space-y-6">
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Часы работы</h3>
+                            <div class="space-y-2 text-body">
+                                <p class="flex justify-between">
+                                    <span class="text-gray-600">Пн-Пт</span>
+                                    <span>10:00 - 22:00</span>
+                                </p>
+                                <p class="flex justify-between">
+                                    <span class="text-gray-600">Сб-Вс</span>
+                                    <span>11:00 - 23:00</span>
+                                </p>
+                            </div>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Что включено</h3>
+                            <div class="flex flex-wrap gap-2 text-small">
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Wi-Fi</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Парковка</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Детская комната</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Кальян</span
+                                >
+                            </div>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Тип кухни</h3>
+                            <p class="text-body text-gray-600">
+                                Европейская, Азиатская, Авторская
+                            </p>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Меню</h3>
+                            <a
+                                href="#"
+                                class="bg-button py-3 rounded-soft text-body block text-center"
+                            >
+                                Скачать меню
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-h2">Отзывы</h2>
+                            <button
+                                class="bg-active px-4 py-2 rounded-soft text-small font-medium"
+                            >
+                                Добавить отзыв
+                            </button>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-card2 p-4 rounded-soft">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-button flex items-center justify-center font-semibold text-gray-600"
+                                    >
+                                        ИП
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-body">
+                                            Иван Петров
+                                        </p>
+                                        <div
+                                            class="flex items-center text-card1 text-sm"
+                                        >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-gray-300"
+                                                >&#9733;</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-body text-gray-600">
+                                    Прекрасное место для дня рождения!
+                                    Обслуживание на высшем уровне, кухня
+                                    невероятно вкусная, а интерьер создаёт
+                                    уютную атмосферу.
+                                </p>
+                            </div>
+                            <div class="bg-card2 p-4 rounded-soft">
+                                <div class="flex items-center gap-4 mb-2">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-button flex items-center justify-center font-semibold text-gray-600"
+                                    >
+                                        МС
+                                    </div>
+                                    <div>
+                                        <p class="font-medium text-body">
+                                            Мария Смирнова
+                                        </p>
+                                        <div
+                                            class="flex items-center text-card1 text-sm"
+                                        >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                            <span class="text-[#facc15]"
+                                                >&#9733;</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-body text-gray-600">
+                                    Очень понравилось! Всё чисто и красиво,
+                                    персонал дружелюбный, а еда просто выше
+                                    всяких похвал. Обязательно вернёмся!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden lg:block lg:col-span-4">
+                    <div
+                        class="p-6 bg-card2 rounded-soft sticky top-4 space-y-6"
+                    >
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-h3">Часы работы</h3>
+                            <span class="text-body font-semibold text-green-600"
+                                >Открыто</span
+                            >
+                        </div>
+                        <div class="space-y-2 text-body">
+                            <p class="flex justify-between">
+                                <span class="text-gray-600">Пн-Пт</span>
+                                <span>10:00 - 22:00</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="text-gray-600">Сб-Вс</span>
+                                <span>11:00 - 23:00</span>
+                            </p>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Что включено</h3>
+                            <div class="flex flex-wrap gap-2 text-small">
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Wi-Fi</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Парковка</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Детская комната</span
+                                >
+                                <span class="bg-button px-3 py-1 rounded-full"
+                                    >Кальян</span
+                                >
+                            </div>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Тип кухни</h3>
+                            <p class="text-body text-gray-600">
+                                Европейская, Азиатская, Авторская
+                            </p>
+                        </div>
+                        <hr class="border-gray-300" />
+                        <div class="space-y-2">
+                            <h3 class="text-h3">Меню</h3>
+                            <a
+                                href="#"
+                                class="bg-button py-3 rounded-soft text-body block text-center"
+                            >
+                                Скачать меню
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

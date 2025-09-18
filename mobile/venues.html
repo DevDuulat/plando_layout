@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Заведения</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Nunito', 'ui-sans-serif', 'system-ui'],
+                        },
+                        fontSize: {
+                            h1: [
+                                '36px',
+                                { lineHeight: '44px', fontWeight: '600' },
+                            ],
+                            h2: [
+                                '28px',
+                                { lineHeight: '36px', fontWeight: '600' },
+                            ],
+                            h3: [
+                                '22px',
+                                { lineHeight: '30px', fontWeight: '500' },
+                            ],
+                            body: [
+                                '16px',
+                                { lineHeight: '24px', fontWeight: '400' },
+                            ],
+                            small: [
+                                '14px',
+                                { lineHeight: '20px', fontWeight: '400' },
+                            ],
+                        },
+                        colors: {
+                            base: '#FFFFFF', // фон сайта
+                            active: '#D9EBD5', // фон активных элементов
+                            card1: '#F1E6BA', // фон карточек 2
+                            button: '#EEEEEE', // фон кнопок
+                            card2: '#F6F6F6', // фон карточек заведений и специалистов
+                            navactive: '#232323', // фон активной кнопки в моб. навбаре
+                        },
+                        borderRadius: {
+                            soft: '25px', // общее скругление
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+
+    <body class="bg-base text-gray-800 font-sans">
+        <div class="px-4 pb-20 lg:px-12">
+            <nav class="py-4">
+                <ol class="flex items-center space-x-2 text-small">
+                    <li><a href="#" class="text-gray-500">Главная</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-navactive font-medium">Заведения</li>
+                </ol>
+            </nav>
+            <h1 class="text-h1 hidden lg:block mb-8">Заведения</h1>
+
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-4 hidden lg:block">
+                    <div class="p-6 bg-card2 rounded-soft sticky top-4">
+                        <h2 class="text-h3 mb-6">Фильтры</h2>
+
+                        <div class="mb-6">
+                            <h3 class="text-body font-medium mb-3">
+                                Категория
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    Рестораны
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    Кафе
+                                </button>
+                                <button
+                                    class="bg-active px-4 py-2 rounded-soft text-small"
+                                >
+                                    Банкеты
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    Бары
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-body font-medium mb-3">Цена</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    $
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    $$
+                                </button>
+                                <button
+                                    class="bg-active px-4 py-2 rounded-soft text-small"
+                                >
+                                    $$$
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    $$$$
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-body font-medium mb-3">
+                                Вместимость
+                            </h3>
+                            <div class="flex items-center">
+                                <input
+                                    type="range"
+                                    min="10"
+                                    max="200"
+                                    value="50"
+                                    class="w-full h-2 bg-button rounded-lg appearance-none cursor-pointer"
+                                />
+                            </div>
+                            <div
+                                class="text-small text-gray-600 mt-2 text-center"
+                            >
+                                До 50 гостей
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-body font-medium mb-3">Рейтинг</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    5 звезд
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    4+ звезд
+                                </button>
+                                <button
+                                    class="bg-active px-4 py-2 rounded-soft text-small"
+                                >
+                                    3+ звезд
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-2 rounded-soft text-small"
+                                >
+                                    Любой
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="text-body font-medium mb-3">
+                                Сортировка
+                            </h3>
+                            <div class="space-y-3">
+                                <button
+                                    class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                                >
+                                    По умолчанию
+                                </button>
+                                <button
+                                    class="bg-active px-4 py-3 rounded-soft text-body w-full text-left"
+                                >
+                                    По рейтингу
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                                >
+                                    По цене
+                                </button>
+                                <button
+                                    class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                                >
+                                    По вместимости
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <button
+                                class="bg-button flex-1 py-3 rounded-soft text-body"
+                            >
+                                Сбросить
+                            </button>
+                            <button
+                                class="bg-active flex-1 py-3 rounded-soft text-body"
+                            >
+                                Применить
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-12 lg:hidden">
+                    <div
+                        class="flex gap-3 mb-6 sticky top-0 bg-base py-3 z-10 overflow-x-auto"
+                    >
+                        <button
+                            id="filterToggle"
+                            class="bg-button flex-shrink-0 px-4 py-3 rounded-soft text-body text-center"
+                        >
+                            Фильтр
+                        </button>
+                        <button
+                            id="ratingToggle"
+                            class="bg-button flex-shrink-0 px-4 py-3 rounded-soft text-body text-center"
+                        >
+                            Рейтинг
+                        </button>
+                        <button
+                            id="mapToggle"
+                            class="bg-button flex-shrink-0 px-4 py-3 rounded-soft text-body text-center"
+                        >
+                            На карте
+                        </button>
+                        <button
+                            id="sortToggle"
+                            class="bg-button flex-shrink-0 px-4 py-3 rounded-soft text-body text-center"
+                        >
+                            Сортировка
+                        </button>
+                    </div>
+                    <div class="mb-4 text-small text-gray-500">
+                        <span class="font-medium text-navactive">128</span> мест
+                        для проведения праздника
+                    </div>
+                </div>
+
+                <div class="col-span-12 lg:col-span-8">
+                    <h2 class="text-h2 lg:hidden mb-4">Заведения</h2>
+                    <div
+                        class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3"
+                    >
+                        <div
+                            class="bg-card2 rounded-soft overflow-hidden p-[10px]"
+                        >
+                            <div class="relative">
+                                <img
+                                    src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1198&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Card Image"
+                                    class="w-full h-36 lg:h-52 object-cover rounded-soft"
+                                />
+                                <div
+                                    class="absolute bottom-0 left-0 m-1 px-3 py-1 bg-white/70 backdrop-blur-md text-black rounded-soft font-semibold"
+                                >
+                                    Заголовок
+                                </div>
+                            </div>
+                            <div
+                                class="relative p-[5px] bg-card1 rounded-soft mt-2"
+                            >
+                                <div
+                                    class="absolute top-[4px] right-[4px] w-10 h-10 bg-[#BFB79F] rounded-full flex items-center justify-center"
+                                >
+                                    <svg
+                                        width="20px"
+                                        height="20px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </div>
+                                <div
+                                    class="flex flex-col p-[5px] text-small font-normal space-y-1"
+                                >
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 10H10"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M21.9977 12.5C21.9977 12.4226 22 11.9673 21.9977 11.9346C21.9623 11.4338 21.5328 11.035 20.9935 11.0021C20.9583 11 20.9167 11 20.8333 11H18.2308C16.4465 11 15 12.3431 15 14C15 15.6569 16.4465 17 18.2308 17H20.8333C20.9167 17 20.9583 17 20.9935 16.9979C21.5328 16.965 21.9623 16.5662 21.9977 16.0654C22 16.0327 22 15.5774 22 15.5"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <circle
+                                                cx="18"
+                                                cy="14"
+                                                r="1"
+                                                fill="#6b7280"
+                                            ></circle>
+                                            <path
+                                                d="M10 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.6366 20.0203 20.8873 18.8723 20.965 17M20.965 11C20.8873 9.1277 20.6366 7.97975 19.8284 7.17157C18.6569 6 16.7712 6 13 6H10C6.22876 6 4.34315 6 3.17157 7.17157C2 8.34315 2 10.2288 2 14C2 17.7712 2 19.6569 3.17157 20.8284C3.82475 21.4816 4.69989 21.7706 6 21.8985"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 6L9.73549 3.52313C10.7874 2.82562 12.2126 2.82562 13.2645 3.52313L17 6"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500">$$$</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                cx="12"
+                                                cy="6"
+                                                r="4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 9C4.34315 9 3 7.88071 3 6.5C3 5.11929 4.34315 4 6 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M17.1973 15C17.7078 15.5883 18 16.2714 18 17C18 19.2091 15.3137 21 12 21C8.68629 21 6 19.2091 6 17C6 14.7909 8.68629 13 12 13C12.3407 13 12.6748 13.0189 13 13.0553"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500"
+                                            >10 гостей</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center justify-center gap-2 mt-8 text-small font-semibold"
+                    >
+                        <button
+                            class="flex items-center justify-center w-8 h-8 rounded-full bg-button text-gray-500"
+                        >
+                            <svg
+                                width="20px"
+                                height="20px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M15 6L9 12L15 18"
+                                    stroke="#6B7280"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-active text-navactive"
+                        >
+                            1
+                        </button>
+                        <button class="w-8 h-8 rounded-full text-navactive">
+                            2
+                        </button>
+                        <button class="w-8 h-8 rounded-full text-navactive">
+                            3
+                        </button>
+                        <span class="text-gray-500">...</span>
+                        <button class="w-8 h-8 rounded-full text-navactive">
+                            10
+                        </button>
+                        <button
+                            class="flex items-center justify-center w-8 h-8 rounded-full bg-button text-gray-500"
+                        >
+                            <svg
+                                width="20px"
+                                height="20px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9 6L15 12L9 18"
+                                    stroke="#6B7280"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="filterPopup" class="fixed inset-0 z-50 hidden lg:hidden">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-50"
+                id="filterOverlay"
+            ></div>
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-base rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto"
+            >
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-h3">Фильтры</h2>
+                    <button id="closeFilter" class="text-body text-gray-500">
+                        Закрыть
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-body font-medium mb-3">Категория</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                Рестораны
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                Кафе
+                            </button>
+                            <button
+                                class="bg-active px-4 py-2 rounded-soft text-small"
+                            >
+                                Банкеты
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                Бары
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-body font-medium mb-3">Цена</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                $
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                $$
+                            </button>
+                            <button
+                                class="bg-active px-4 py-2 rounded-soft text-small"
+                            >
+                                $$$
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                $$$$
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-body font-medium mb-3">Вместимость</h3>
+                        <div class="flex items-center">
+                            <input
+                                type="range"
+                                min="10"
+                                max="200"
+                                value="50"
+                                class="w-full h-2 bg-button rounded-lg appearance-none cursor-pointer"
+                            />
+                        </div>
+                        <div class="text-small text-gray-600 mt-2 text-center">
+                            До 50 гостей
+                        </div>
+                    </div>
+                    <div class="flex gap-3 pt-4 sticky bottom-0 bg-base pb-2">
+                        <button
+                            class="bg-button flex-1 py-3 rounded-soft text-body"
+                        >
+                            Сбросить
+                        </button>
+                        <button
+                            class="bg-active flex-1 py-3 rounded-soft text-body"
+                            id="applyFilter"
+                        >
+                            Применить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ratingPopup" class="fixed inset-0 z-50 hidden lg:hidden">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-50"
+                id="ratingOverlay"
+            ></div>
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-base rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto"
+            >
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-h3">Рейтинг</h2>
+                    <button id="closeRating" class="text-body text-gray-500">
+                        Закрыть
+                    </button>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-body font-medium mb-3">Отзывы</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                5 звезд
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                4+ звезд
+                            </button>
+                            <button
+                                class="bg-active px-4 py-2 rounded-soft text-small"
+                            >
+                                3+ звезд
+                            </button>
+                            <button
+                                class="bg-button px-4 py-2 rounded-soft text-small"
+                            >
+                                Любой
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-body font-medium mb-3">
+                            Количество отзывов
+                        </h3>
+                        <div class="flex items-center">
+                            <input
+                                type="range"
+                                min="0"
+                                max="1000"
+                                value="100"
+                                class="w-full h-2 bg-button rounded-lg appearance-none cursor-pointer"
+                            />
+                        </div>
+                        <div class="text-small text-gray-600 mt-2 text-center">
+                            От 100 отзывов
+                        </div>
+                    </div>
+                    <div class="flex gap-3 pt-4 sticky bottom-0 bg-base pb-2">
+                        <button
+                            class="bg-button flex-1 py-3 rounded-soft text-body"
+                        >
+                            Сбросить
+                        </button>
+                        <button
+                            class="bg-active flex-1 py-3 rounded-soft text-body"
+                            id="applyRating"
+                        >
+                            Применить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mapPopup" class="fixed inset-0 z-50 hidden lg:hidden">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-50"
+                id="mapOverlay"
+            ></div>
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-base rounded-t-3xl p-6 max-h-[80vh] flex flex-col"
+            >
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-h3">Карта</h2>
+                    <button id="closeMap" class="text-body text-gray-500">
+                        Закрыть
+                    </button>
+                </div>
+                <div class="flex-1 rounded-soft overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1120.0827157883905!2d37.61841319985929!3d55.75124115160914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50d2105151%3A0xc3f2c5e52a4e405a!2z0JzQvtGB0YLRjCwg0JzQvtGB0YLRjCA!5e0!3m2!1sru!2skg!4v1709664563857!5m2!1sru!2skg"
+                        width="100%"
+                        height="100%"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <button
+                        class="bg-active w-full py-3 rounded-soft text-body"
+                    >
+                        Показать на карте
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="sortPopup" class="fixed inset-0 z-50 hidden lg:hidden">
+            <div
+                class="absolute inset-0 bg-black bg-opacity-50"
+                id="sortOverlay"
+            ></div>
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-base rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto"
+            >
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-h3">Сортировка</h2>
+                    <button id="closeSort" class="text-body text-gray-500">
+                        Закрыть
+                    </button>
+                </div>
+                <div class="space-y-3">
+                    <button
+                        class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                    >
+                        По умолчанию
+                    </button>
+                    <button
+                        class="bg-active px-4 py-3 rounded-soft text-body w-full text-left"
+                    >
+                        По рейтингу
+                    </button>
+                    <button
+                        class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                    >
+                        По цене
+                    </button>
+                    <button
+                        class="bg-button px-4 py-3 rounded-soft text-body w-full text-left"
+                    >
+                        По вместимости
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Управление попапом фильтра
+            const filterToggle = document.getElementById('filterToggle');
+            const filterPopup = document.getElementById('filterPopup');
+            const closeFilter = document.getElementById('closeFilter');
+            const filterOverlay = document.getElementById('filterOverlay');
+            const applyFilter = document.getElementById('applyFilter');
+
+            filterToggle.addEventListener('click', () => {
+                filterPopup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeFilterPopup() {
+                filterPopup.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            closeFilter.addEventListener('click', closeFilterPopup);
+            filterOverlay.addEventListener('click', closeFilterPopup);
+            applyFilter.addEventListener('click', closeFilterPopup);
+
+            // Управление попапом рейтинга
+            const ratingToggle = document.getElementById('ratingToggle');
+            const ratingPopup = document.getElementById('ratingPopup');
+            const closeRating = document.getElementById('closeRating');
+            const ratingOverlay = document.getElementById('ratingOverlay');
+            const applyRating = document.getElementById('applyRating');
+
+            ratingToggle.addEventListener('click', () => {
+                ratingPopup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeRatingPopup() {
+                ratingPopup.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            closeRating.addEventListener('click', closeRatingPopup);
+            ratingOverlay.addEventListener('click', closeRatingPopup);
+            applyRating.addEventListener('click', closeRatingPopup);
+
+            // Управление попапом карты
+            const mapToggle = document.getElementById('mapToggle');
+            const mapPopup = document.getElementById('mapPopup');
+            const closeMap = document.getElementById('closeMap');
+            const mapOverlay = document.getElementById('mapOverlay');
+
+            mapToggle.addEventListener('click', () => {
+                mapPopup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeMapPopup() {
+                mapPopup.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            closeMap.addEventListener('click', closeMapPopup);
+            mapOverlay.addEventListener('click', closeMapPopup);
+
+            // Управление попапом сортировки
+            const sortToggle = document.getElementById('sortToggle');
+            const sortPopup = document.getElementById('sortPopup');
+            const closeSort = document.getElementById('closeSort');
+            const sortOverlay = document.getElementById('sortOverlay');
+
+            sortToggle.addEventListener('click', () => {
+                sortPopup.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+
+            function closeSortPopup() {
+                sortPopup.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            closeSort.addEventListener('click', closeSortPopup);
+            sortOverlay.addEventListener('click', closeSortPopup);
+        </script>
+    </body>
+</html>
