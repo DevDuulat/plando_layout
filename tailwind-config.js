@@ -4,6 +4,7 @@ tailwind.config = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', 'ui-sans-serif', 'system-ui'],
+                logo: ['Lato', 'sans-serif'],
             },
             fontSize: {
                 h1: ['36px', { lineHeight: '44px', fontWeight: '600' }],
