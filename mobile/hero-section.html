@@ -1,4 +1,703 @@
-                  </svg>
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Праздник - найди идеальное место</title>
+
+        <!-- Подключаем Nunito -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ['Nunito', 'ui-sans-serif', 'system-ui'],
+                        },
+                        fontSize: {
+                            h1: [
+                                '36px',
+                                { lineHeight: '44px', fontWeight: '600' },
+                            ],
+                            h2: [
+                                '28px',
+                                { lineHeight: '36px', fontWeight: '600' },
+                            ],
+                            h3: [
+                                '22px',
+                                { lineHeight: '30px', fontWeight: '500' },
+                            ],
+                            body: [
+                                '16px',
+                                { lineHeight: '24px', fontWeight: '400' },
+                            ],
+                            small: [
+                                '14px',
+                                { lineHeight: '20px', fontWeight: '400' },
+                            ],
+                        },
+                        colors: {
+                            base: '#FFFFFF', // фон сайта
+                            active: '#D9EBD5', // фон активных элементов
+                            card1: '#F1E6BA', // фон карточек 2
+                            button: '#EEEEEE', // фон кнопок
+                            card2: '#F6F6F6', // фон карточек заведений и специалистов
+                            navactive: '#232323', // фон активной кнопки в моб. навбаре
+                        },
+                        borderRadius: {
+                            soft: '25px', // общее скругление
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <style>
+            .navbar {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .navbar-hidden {
+                transform: translateY(-100%);
+            }
+        </style>
+    </head>
+
+    <body class="bg-base text-gray-800 font-sans pb-20">
+        <nav class="navbar fixed top-0 left-0 right-0 z-50 bg-white py-3 px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 bg-button rounded-full flex items-center justify-center"
+                    >
+                        <svg
+                            width="30px"
+                            height="30px"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                                id="SVGRepo_tracerCarrier"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Menu / Menu_Alt_03">
+                                    <path
+                                        id="Vector"
+                                        d="M5 17H13M5 12H19M5 7H13"
+                                        stroke="#000000"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-semibold ml-2">Plan & Do</span>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full bg-button">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            />
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full bg-button">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 4v16m8-8H4"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="mt-20 px-4">
+            <section
+                class="flex flex-col items-center justify-start space-y-6 mb-8"
+            >
+                <div class="w-full rounded-soft overflow-hidden shadow-md">
+                    <img
+                        src="https://images.unsplash.com/photo-1481653125770-b78c206c59d4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Идеальное место для праздника"
+                        class="w-full h-auto object-cover rounded-soft"
+                    />
+                </div>
+
+                <h1 class="text-h1 text-center">
+                    Найди идеальное место для праздника
+                </h1>
+
+                <p class="text-body text-center max-w-xs mx-auto text-gray-700">
+                    Легко бронируй заведения и собирай команду специалистов для
+                    незабываемого события.
+                </p>
+
+                <div class="flex flex-col gap-3 w-full max-w-xs mx-auto">
+                    <button
+                        class="bg-active text-gray-800 text-body rounded-soft py-3 w-full font-semibold transition hover:bg-[#CFE6BB] shadow-md"
+                    >
+                        Начать планировать
+                    </button>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-h2 mb-4">Категории</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-card1 p-4 rounded-soft shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-full bg-white mb-2"
+                        >
+                            <svg
+                                width="24px"
+                                height="24px"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M22 22L2 22"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M21 22V13M11.0044 5C11.0223 3.76022 11.1143 3.05733 11.5858 2.58579C12.1716 2 13.1144 2 15 2H17C18.8857 2 19.8285 2 20.4143 2.58579C21 3.17157 21 4.11438 21 6V9"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M15 22V16M3 22V13M3 9C3 7.11438 3 6.17157 3.58579 5.58579C4.17157 5 5.11438 5 7 5H11C12.8856 5 13.8284 5 14.4142 5.58579C15 6.17157 15 7.11438 15 9V12"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M9 22V19"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M6 8H12"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M6 11H7M12 11H9.5"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                    <path
+                                        d="M6 14H12"
+                                        stroke="#232323"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-h3">Заведения</h3>
+                        <p class="text-small mt-1">Рестораны, банкетные залы</p>
+                    </div>
+
+                    <div class="bg-active p-4 rounded-soft shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-full bg-white mb-2"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-h3">Ведущие</h3>
+                        <p class="text-small mt-1">
+                            Профессиональные организаторы
+                        </p>
+                    </div>
+
+                    <div class="bg-card2 p-4 rounded-soft shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-full bg-white mb-2"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 22V12h6v10"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-h3">Фотографы</h3>
+                        <p class="text-small mt-1">
+                            Запечатлите лучшие моменты
+                        </p>
+                    </div>
+
+                    <div class="bg-card1 p-4 rounded-soft shadow-md">
+                        <div
+                            class="flex items-center justify-center h-12 w-12 rounded-full bg-white mb-2"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-h3">Флористы</h3>
+                        <p class="text-small mt-1">Цветочное оформление</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-h2">Популярные заведения</h2>
+                    <button class="text-active font-semibold text-body">
+                        Все
+                    </button>
+                </div>
+
+                <div
+                    class="overflow-x-auto snap-x snap-mandatory flex space-x-4 pb-4 px-4"
+                >
+                    <!-- Карточка 1 -->
+                    <div class="flex-shrink-0 w-[210px] snap-start">
+                        <div
+                            class="w-[210px] bg-[#F6F6F6] shadow-md rounded-[16px] overflow-hidden p-[10px]"
+                        >
+                            <div class="relative">
+                                <img
+                                    src="https://placehold.co/600x400"
+                                    alt="Card Image"
+                                    class="w-full h-36 object-cover rounded-[16px]"
+                                />
+                                <div
+                                    class="absolute bottom-0 left-0 m-1 px-3 py-1 bg-white/70 backdrop-blur-md text-black rounded-[16px] font-semibold"
+                                >
+                                    La Bella
+                                </div>
+                            </div>
+
+                            <div
+                                class="relative p-[5px] bg-[#F2E7BB] rounded-[16px] mt-2"
+                            >
+                                <div
+                                    class="absolute top-[4px] right-[4px] w-10 h-10 bg-[#BFB79F] rounded-full flex items-center justify-center"
+                                >
+                                    <svg
+                                        width="20px"
+                                        height="20px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="flex flex-col p-[5px] text-sm font-normal space-y-1"
+                                >
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 10H10"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M21.9977 12.5C21.9977 12.4226 22 11.9673 21.9977 11.9346C21.9623 11.4338 21.5328 11.035 20.9935 11.0021C20.9583 11 20.9167 11 20.8333 11H18.2308C16.4465 11 15 12.3431 15 14C15 15.6569 16.4465 17 18.2308 17H20.8333C20.9167 17 20.9583 17 20.9935 16.9979C21.5328 16.965 21.9623 16.5662 21.9977 16.0654C22 16.0327 22 15.5774 22 15.5"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <circle
+                                                cx="18"
+                                                cy="14"
+                                                r="1"
+                                                fill="#6b7280"
+                                            ></circle>
+                                            <path
+                                                d="M10 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.6366 20.0203 20.8873 18.8723 20.965 17M20.965 11C20.8873 9.1277 20.6366 7.97975 19.8284 7.17157C18.6569 6 16.7712 6 13 6H10C6.22876 6 4.34315 6 3.17157 7.17157C2 8.34315 2 10.2288 2 14C2 17.7712 2 19.6569 3.17157 20.8284C3.82475 21.4816 4.69989 21.7706 6 21.8985"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 6L9.73549 3.52313C10.7874 2.82562 12.2126 2.82562 13.2645 3.52313L17 6"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500">$$$</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                cx="12"
+                                                cy="6"
+                                                r="4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 9C4.34315 9 3 7.88071 3 6.5C3 5.11929 4.34315 4 6 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M17.1973 15C17.7078 15.5883 18 16.2714 18 17C18 19.2091 15.3137 21 12 21C8.68629 21 6 19.2091 6 17C6 14.7909 8.68629 13 12 13C12.3407 13 12.6748 13.0189 13 13.0553"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500"
+                                            >10 гостей</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка    2 -->
+
+                    <div class="flex-shrink-0 w-[210px] snap-start">
+                        <div
+                            class="w-[210px] bg-[#F6F6F6] shadow-md rounded-[16px] overflow-hidden p-[10px]"
+                        >
+                            <div class="relative">
+                                <img
+                                    src="https://placehold.co/600x400"
+                                    alt="Card Image"
+                                    class="w-full h-36 object-cover rounded-[16px]"
+                                />
+                                <div
+                                    class="absolute bottom-0 left-0 m-1 px-3 py-1 bg-white/70 backdrop-blur-md text-black rounded-[16px] font-semibold"
+                                >
+                                    La Bella
+                                </div>
+                            </div>
+
+                            <div
+                                class="relative p-[5px] bg-[#F2E7BB] rounded-[16px] mt-2"
+                            >
+                                <div
+                                    class="absolute top-[4px] right-[4px] w-10 h-10 bg-[#BFB79F] rounded-full flex items-center justify-center"
+                                >
+                                    <svg
+                                        width="20px"
+                                        height="20px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="flex flex-col p-[5px] text-sm font-normal space-y-1"
+                                >
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 10H10"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M21.9977 12.5C21.9977 12.4226 22 11.9673 21.9977 11.9346C21.9623 11.4338 21.5328 11.035 20.9935 11.0021C20.9583 11 20.9167 11 20.8333 11H18.2308C16.4465 11 15 12.3431 15 14C15 15.6569 16.4465 17 18.2308 17H20.8333C20.9167 17 20.9583 17 20.9935 16.9979C21.5328 16.965 21.9623 16.5662 21.9977 16.0654C22 16.0327 22 15.5774 22 15.5"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <circle
+                                                cx="18"
+                                                cy="14"
+                                                r="1"
+                                                fill="#6b7280"
+                                            ></circle>
+                                            <path
+                                                d="M10 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.6366 20.0203 20.8873 18.8723 20.965 17M20.965 11C20.8873 9.1277 20.6366 7.97975 19.8284 7.17157C18.6569 6 16.7712 6 13 6H10C6.22876 6 4.34315 6 3.17157 7.17157C2 8.34315 2 10.2288 2 14C2 17.7712 2 19.6569 3.17157 20.8284C3.82475 21.4816 4.69989 21.7706 6 21.8985"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 6L9.73549 3.52313C10.7874 2.82562 12.2126 2.82562 13.2645 3.52313L17 6"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500">$$$</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <circle
+                                                cx="12"
+                                                cy="6"
+                                                r="4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                            ></circle>
+                                            <path
+                                                d="M18 9C19.6569 9 21 7.88071 21 6.5C21 5.11929 19.6569 4 18 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 9C4.34315 9 3 7.88071 3 6.5C3 5.11929 4.34315 4 6 4"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M17.1973 15C17.7078 15.5883 18 16.2714 18 17C18 19.2091 15.3137 21 12 21C8.68629 21 6 19.2091 6 17C6 14.7909 8.68629 13 12 13C12.3407 13 12.6748 13.0189 13 13.0553"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M20 19C21.7542 18.6153 23 17.6411 23 16.5C23 15.3589 21.7542 14.3847 20 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M4 19C2.24575 18.6153 1 17.6411 1 16.5C1 15.3589 2.24575 14.3847 4 14"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
+                                        <span class="text-gray-500"
+                                            >10 гостей</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Карточка 1 -->
+                    <div class="flex-shrink-0 w-[210px] snap-start">
+                        <div
+                            class="w-[210px] bg-[#F6F6F6] shadow-md rounded-[16px] overflow-hidden p-[10px]"
+                        >
+                            <div class="relative">
+                                <img
+                                    src="https://placehold.co/600x400"
+                                    alt="Card Image"
+                                    class="w-full h-36 object-cover rounded-[16px]"
+                                />
+                                <div
+                                    class="absolute bottom-0 left-0 m-1 px-3 py-1 bg-white/70 backdrop-blur-md text-black rounded-[16px] font-semibold"
+                                >
+                                    La Bella
+                                </div>
+                            </div>
+
+                            <div
+                                class="relative p-[5px] bg-[#F2E7BB] rounded-[16px] mt-2"
+                            >
+                                <div
+                                    class="absolute top-[4px] right-[4px] w-10 h-10 bg-[#BFB79F] rounded-full flex items-center justify-center"
+                                >
+                                    <svg
+                                        width="20px"
+                                        height="20px"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                            fill="white"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="flex flex-col p-[5px] text-sm font-normal space-y-1"
+                                >
+                                    <div class="flex items-center space-x-2">
+                                        <svg
+                                            width="22px"
+                                            height="22px"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M6 10H10"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M21.9977 12.5C21.9977 12.4226 22 11.9673 21.9977 11.9346C21.9623 11.4338 21.5328 11.035 20.9935 11.0021C20.9583 11 20.9167 11 20.8333 11H18.2308C16.4465 11 15 12.3431 15 14C15 15.6569 16.4465 17 18.2308 17H20.8333C20.9167 17 20.9583 17 20.9935 16.9979C21.5328 16.965 21.9623 16.5662 21.9977 16.0654C22 16.0327 22 15.5774 22 15.5"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <circle
+                                                cx="18"
+                                                cy="14"
+                                                r="1"
+                                                fill="#6b7280"
+                                            ></circle>
+                                            <path
+                                                d="M10 22H13C16.7712 22 18.6569 22 19.8284 20.8284C20.6366 20.0203 20.8873 18.8723 20.965 17M20.965 11C20.8873 9.1277 20.6366 7.97975 19.8284 7.17157C18.6569 6 16.7712 6 13 6H10C6.22876 6 4.34315 6 3.17157 7.17157C2 8.34315 2 10.2288 2 14C2 17.7712 2 19.6569 3.17157 20.8284C3.82475 21.4816 4.69989 21.7706 6 21.8985"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                            <path
+                                                d="M6 6L9.73549 3.52313C10.7874 2.82562 12.2126 2.82562 13.2645 3.52313L17 6"
+                                                stroke="#6b7280"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                            ></path>
+                                        </svg>
                                         <span class="text-gray-500">$$$</span>
                                     </div>
                                     <div class="flex items-center space-x-2">
